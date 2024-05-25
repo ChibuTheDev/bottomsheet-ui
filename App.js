@@ -23,15 +23,16 @@ export default function App() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <BottomSheetModalProvider>
-        <View style={[styles.container, { backgroundColor: isOpen ? 'gray' : 'white' }]}> 
+        <View style={[styles.container, { backgroundColor: isOpen ? 'white' : 'white' }]}> 
           <Button title='Present Modal' onPress={handlePresentModal} />
           <StatusBar style="auto" />
           <BottomSheetModal
             ref={bottomModalRef}
             index={1}
             snapPoints={snapPoints}
-            backgroundStyle={{ borderRadius: 30 }}
+            backgroundStyle={[styles.shadow,{ borderRadius: 30 }]}
             onDismiss={() => setIsOpen(false)}
+            viewStyle={styles.shadow}
           >
             <View style={styles.contentContainer}>
               <Text style={styles.title}>Hello World</Text>
@@ -80,5 +81,19 @@ const styles = StyleSheet.create({
     color:'#101318',
     fontSize:14,
     fontWeight: 'bold'
+  },
+
+  shadow:{
+    shadowColor: "#000",
+shadowOffset: {
+	width: 0,
+	height: 12,
+},
+shadowOpacity: 0.6,
+shadowRadius: 10.32,
+
+elevation: 18,
   }
+
+
 });
