@@ -14,8 +14,8 @@ export default function App() {
   const snapPoints = ['25%', '48%', '70%']; // How much of the screen we want the sheet to take
 
   function handlePresentModal() {
-    bottomModalRef.current?.present();
-    setTimeout(() => {
+    bottomModalRef.current?.present(); 
+    setTimeout(() => { 
       setIsOpen(true);
     }, 150);
   }
@@ -23,7 +23,7 @@ export default function App() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <BottomSheetModalProvider>
-        <View style={[styles.container, { backgroundColor: isOpen ? 'white' : 'white' }]}> 
+        <View style={[styles.container, { backgroundColor: isOpen ? 'gray' : 'white' }]}> {/* How conditional styles work in React native*/}
           <Button title='Present Modal' onPress={handlePresentModal} />
           <StatusBar style="auto" />
           <BottomSheetModal
@@ -31,7 +31,7 @@ export default function App() {
             index={1}
             snapPoints={snapPoints}
             backgroundStyle={[styles.shadow,{ borderRadius: 30 }]}
-            onDismiss={() => setIsOpen(false)}
+            onDismiss={() => setIsOpen(false)} 
             viewStyle={styles.shadow}
           >
             <View style={styles.contentContainer}>
