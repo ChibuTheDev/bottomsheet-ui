@@ -14,7 +14,7 @@ export default function App() {
   const snapPoints = ['25%', '48%', '70%']; // How much of the screen we want the sheet to take
 
   function handlePresentModal() {
-    bottomModalRef.current?.present(); 
+    bottomModalRef.current?.present();  
     setTimeout(() => { 
       setIsOpen(true);
     }, 150);
